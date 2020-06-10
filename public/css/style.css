@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Open sans',sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.header{
+	background: rgba(11, 138, 210, 0.9);
+	width: 100%;
+	height: 100px;
+}
+.logo{
+	width: 10%;
+	height: 100px;
+}
+.content-image{
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	background-image: url(../images/alberta.jpg);
+}
+.logo img{
+	margin: 0;
+	width: 100%;
+	height: 100px;
+}
+
+.header-text{
+	font-size: 35px;
+	margin-top: -6%;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-align: center;
+}
+
+.formulaire{
+	position: absolute;
+	width: 50%;
+	/*align-items: center;
+	justify-content: center;
+	display: flex;*/
+	margin-left: 25%;
+	margin-right: 25%;
+	top: 200px;
+	height: 400px;
+	background-color: #FFFFFF
+}
+.formulaire h2{
+	text-align: center;
+	display: block;
+	top: 1%;
+	margin-bottom: 5%;
+}
+.form-gr{
+	margin-top: 9%;
+	width: 100%;
+}
+.formulaire  input{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 45px;
+	margin-bottom: 20px;
+	border: 1px solid #0C6FF4;
+	border-radius: 7px;
+}
+.formulaire span{
+	display: block;
+	color: red;
+	margin-left: 10%;
+	font-size: 15px;
+}
+.icone img{
+	position: absolute;
+	display: block;
+	height: 35px;
+	float: left;
+	margin-top: 4px;
+	margin-left: 82%;
+}
+/*responsivity for mobile */
+@media only screen and (max-width: 768px) {
+	.icone img{
+		margin-left: 80%;
+	}
+	.header-text{
+		font-size: 20px;
+		margin-top: -14%;
+	}
+	.formulaire{
+		width: 100%;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+/*************************************/
+.formulaire p{
+	display: block;
+	bottom: 10%;
+	color: #67686A;
+	font-weight: normal;
+	font-size: 26px;
+}
+
+/**********************ADMIN**********************************/
+.btn-deconnexion{
+	float: right;
+	margin-right: 2%;
+	margin-top: -3.5%;
+	font-weight: normal;
+	font-size: 36px;
+	background-color: #3EF4E9;
+	color: #FFFFFF;
+}
+.bar-side{
+	margin-left: 0px;
+	float: left;
+	margin-top: 5px;
+	position: absolute;
+	width: 20%;
+	height:100vh;
+	background-color: #2F80ED;
+}
+.avatar{
+	border: 1px solid #3EF4E9;
+	width: 70%;
+	margin-top: 10%;
+	margin-right: 15%;
+	margin-left: 15%;
+	height: 25%;
+	border-radius: 100%;
+}
+.avatar img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+}
+.first-last-name{
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	display: block;
+}
+/************MENU****************/
+.menu-side{
+	width: 100%;
+	margin-left: 0;
+	margin-top: 25%;
+	height: 25%;
+	background-color: #FFFAF0;
+}
+
+.vertical-menu {
+  width: 100%; 
+}
+.vertical-menu a {
+  background-color: #eee; 
+  color: black; 
+  display: block; 
+  padding: 12px; 
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: burlywood;
+}
+
+.vertical-menu a:active{
+  border-left: solid 5px green; 
+  color: black;
+}
+.icone-menu{
+	float: right;
+}
+.page-content-admin{
+	width: 77.5%;
+	height: 100vh;
+	margin-left: 21.9%;
+	margin-top: 5px;
+	float: left;
+}
+.cadre-create-question{
+	border: 1px solid #0C6FF4;
+	width: 98%;
+	margin-left: 1%;
+	margin-right: 1%;
+	float:left;
+	margin-top: 2vh;
+	height: 90vh;
+}
+.cadre-create-question textarea{
+	width: 100%;
+	height: 15%;
+	margin-top: 3%;
+	margin-bottom: 15px;
+}
+.cadre-create-question label{
+	float: left;
+	margin-left: -18%;
+	margin-top: 1%;
+}
+.cadre-create-question input{
+	margin-bottom: 15px;
+}
+.btn-add{
+	float: right;
+	margin-right: -10%;
+	margin-top: -5%;
+	background-repeat: no-repeat;
+	border-style: none;
+}
+.btn-save-question{
+	margin-top: 5%;
+	float: right;
+	height: 35px;
+	width: 25%;
+	background-color: #0C6FF4;
+}
+.formulaire h2{
+	display: block;
+}
+.cadre{
+	border: 1px solid #0C6FF4;
+	width: 98%;
+	margin-left: 1%;
+	margin-right: 1%;
+	float:left;
+	height: 100vh;
+	background-color: #FFFAF0;
+}
+span{
+	display: block;
+	color: #dc143c;
+	font-size: 15px;
+	margin-left: 15px;
+}
+.cadre small{
+	display: block;
+	color: #dc143c;
+	font-size: 12px;
+}
+.btn-suivant{
+	float: right;
+	width: 15%;
+	height: 40px;
+	background-color: #0C6FF4;
+	color: #FFFAF0;	
+	margin-right: 18%;
+}
+.btn-info{
+	margin-left: 30%;
+	margin-top: -4%;
+}
+.photo{
+	width: 10%;
+	height: 15%;
+	border-radius: 100%;
+	background-color: #FFFAF0;;
+	margin-left: 45%;
+	margin-top: 2%;
+	margin-right: 45%;
+	border: 1px solid #0C6FF4;;
+}
+.photo img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+}
