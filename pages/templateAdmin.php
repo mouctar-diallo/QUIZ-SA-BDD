@@ -47,7 +47,6 @@
             ?>
         </div>
 
-      
 <script src="<?=WEBROOT?>/public/dataTables/media/js/jquery.js"></script>
 <script src="<?=WEBROOT?>/public/dataTables/media/js/jquery.dataTables.min.js"></script>
 <script src="<?=WEBROOT?>/public/script/script.js"></script>

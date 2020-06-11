@@ -35,10 +35,5 @@
 <script src="public/script/script.js"></script>
 <script src="public/script/validation.js"></script>
 <script src="public/script/ajax.js"></script>
-<script>
-	$(document).ready( function () {
-		$('#example').DataTable();
-	});
-</script>
 </body>
 </html>

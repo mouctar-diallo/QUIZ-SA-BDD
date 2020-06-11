@@ -19,8 +19,8 @@
                     <td><?php echo $result['prenom'];?></td>
                     <td><?php echo $result['score'];?></td>
                     <td class="text-center">
-                        <a href="#" id='<?=$result['id']; ?>' class="btn btn-primary glyphicon glyphicon-pencil"></a>
-                        <a href="#" id='<?=$result['id']; ?>' class= "btn btn-danger glyphicon glyphicon-remove"></a>
+                        <button class="edit glyphicon glyphicon-pencil bg-primary"><a href="#" id='<?=$result['id']; ?>'></a></button>
+                        <button class="delete glyphicon glyphicon-remove bg-danger"><a href="#" id='<?=$result['id']; ?>'></a></button>
                     </td>
                 </tr>
             <?php

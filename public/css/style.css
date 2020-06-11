@@ -21,8 +21,36 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
-	background-image: url(../images/alberta.jpg);
+	background-image: url(../images/icones/alberta.jpg);
 }
+.dynamique{
+	width: 92%;
+	margin-top: 8px;
+	border-color:   #20B2AA;
+	margin-left: 5%;
+}
+.dynamique span{
+	padding: 1%;
+}
+.form-dynamique{
+	margin-top: 1px;
+	margin-bottom: 3px; 
+	margin-left: -3%;
+	width: 85%;
+	height: 35px;
+	border-radius: 6px;
+	border-color: grey;
+}
+.btn-delete{
+	width: 20px;
+	height: 25px;
+	background-size: cover;
+	border: none;
+	margin-left: 2%;
+	background-image: url(../images/icones/ic-supprimer.png);
+	background-repeat: no-repeat;
+}
+
 .logo img{
 	margin: 0;
 	width: 100%;
@@ -210,6 +238,8 @@ body{
 	float: right;
 	margin-right: -10%;
 	margin-top: -5%;
+	border: none;
+	background-size: cover;
 	background-repeat: no-repeat;
 	border-style: none;
 }

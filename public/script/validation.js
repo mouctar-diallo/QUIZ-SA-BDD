@@ -11,7 +11,7 @@ for (input of inputs) {
 }
 //verifions si les fiels ne sont pas vides
 document.getElementById('form').addEventListener('submit',function(e){
-   
+
     var inputs = document.getElementsByTagName('input');
     var erreur = false;
     for (input of inputs) {

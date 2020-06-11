@@ -132,11 +132,12 @@ $(".nav-lien").click(function(){
        
     target=$(this);
     const url= target.attr("lien");
-        
+
     const accueil=$("#accueil");
     accueil.html("")
     accueil.load(`${url}`);
-    //window.location.replace(`${url}`);
+
  })  
+
  
 
