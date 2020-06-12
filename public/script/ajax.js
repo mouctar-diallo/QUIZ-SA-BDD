@@ -102,8 +102,8 @@ function printData(data,tbody){
                 <td id="_id_${users.id}">${users.prenom}</td>
                 <td id="_id_${users.id}">${users.score}</td>
                 <td class="text-center">
-                    <a href="#" id="_id_${users.id}" class= "btn btn-primary glyphicon glyphicon-pencil"></a>
-                    <a href="#" id="_id_${users.id}" class= "btn btn-danger glyphicon glyphicon-remove"></a>
+                    <a href="#" id="_id_${users.id}" class= "edit"></a>
+                    <a href="#" id="_id_${users.id}" class= "delete"></a>
                 </td>
             </tr>
         `);
@@ -132,7 +132,7 @@ $(".nav-lien").click(function(){
        
     target=$(this);
     const url= target.attr("lien");
-
+    
     const accueil=$("#accueil");
     accueil.html("")
     accueil.load(`${url}`);

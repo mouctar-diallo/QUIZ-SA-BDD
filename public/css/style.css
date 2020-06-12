@@ -21,7 +21,7 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
-	background-image: url(../images/icones/alberta.jpg);
+	background-image: url(../images/alberta.jpg);
 }
 .dynamique{
 	width: 92%;
@@ -39,7 +39,6 @@ body{
 	width: 85%;
 	height: 35px;
 	border-radius: 6px;
-	border-color: grey;
 }
 .btn-delete{
 	width: 20px;

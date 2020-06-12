@@ -52,6 +52,28 @@ function testLoginUnique($login)
     }
     return $test;
 }
+//supprimer un utilisateur (joueur)
+function deletePlayers($id)
+{
+    global $bdd; $sup=false;
+    $sql = $bdd->prepare('DELETE FROM users WHERE id = ?');
+    $res = $sql->execute(array($id));
+    if($res == 1){
+        $sup = true;
+    }
+    return $sup;
+}
+//modifier joueur 
+function editPlayers($id_player,$cible,$attribut)
+{
+    global $bdd; $test =false;
+    $sql = $bdd->prepare("UPDATE users SET $cible = ? WHERE id = ?");
+    $result=$sql->execute(array($attribut,$id_player));
+    if ($result == 1) {
+        $test =  true;
+    }
+    return $test;
+}
 //deconnexion
 function deconnexion(){
     session_destroy();
