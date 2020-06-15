@@ -84,7 +84,7 @@ const tbody = $('#tbody');
 $(document).ready(()=>{
     $.ajax({
             type: "POST",
-            url: "http://localhost/sonatel_academy/reprise/traitements/getPlayers.php",
+            url: "http://localhost/QUIZ-SA-BDD/traitements/getPlayers.php",
             
             dataType: "JSON",
             success: function (data) {
@@ -106,9 +106,9 @@ function printData(data,tbody){
                     <a href="#" id="_id_${users.id}" class= "delete"></a>
                 </td>
             </tr>
-        `);
-    });
-}
+            `);
+        });
+    }
 });
 
 }
@@ -126,6 +126,12 @@ $("#btn-deconnexion").on('click',(e)=>{
     window.location.replace('index.php?statut=deconnecter');
 });
 
+$("#btn-logout").on('click',(e)=>{
+    e.preventDefault();
+    window.location.replace('index.php?statut=deconnecter');
+});
+
+
 //navigation du menu de la page d'administration
 
 $(".nav-lien").click(function(){
@@ -139,5 +145,103 @@ $(".nav-lien").click(function(){
 
  })  
 
- 
+ //modification et suppression du joueur
+
+ crudPlayers = ()=>{
+     //recuperer la ligne du tr cliqué
+    $('.users').click(function(){
+        tr = $(this);
+   });
+   //get firstname
+   $(document).on('blur','.firstname',function(){
+       id_player = $(this).data('id');
+       firstname = $(this).text();
+       editPlayers(id_player,firstname,'nom')
+   });
+
+   //get lastname
+   $(document).on('blur','.lastname',function(){
+       id_player = $(this).data('id');
+      lastname = $(this).text();
+      editPlayers(id_player,lastname,'prenom')
+   });
+  
+   function editPlayers(id_player,newValue,champ_a_modifier){
+       $.ajax({
+           url: 'traitements/editPlayer.php',
+           type: 'POST',
+           data:{
+               id: id_player,
+               value:newValue,
+               cible: champ_a_modifier,
+           },
+           success: function(response){
+               alert(response)
+           }
+       })
+   }
+  
+   //delete
+   $(document).on('click','.remove',function(){
+      if(confirm("voulez vraiment supprimé le joueur ?")){
+           id_player = $(this).find('a').attr('id');
+           $.ajax({
+               url: 'traitements/removePlayer.php',
+               type: 'POST',
+               data:{
+                   id : id_player,
+               },
+               success: function(response){
+                   if (response=="supprimer") {
+                       alert('le joueur a eté supprimer avec succès');
+                       //supprimons la ligne correspondante
+                       tr.hide( 2000, function() {
+                           $( this ).remove();
+                       });
+                   }else{
+                       alert("le joueur n'a pas eté supprimer");
+                   }
+               }
+           })
+      }
+      return false;
+   });
+ }
+
+//RECUPERONS LES 5 MEILLEURS PLAYERS
+
+
+const body = $('#top-players');
+
+$(document).ready(()=>{
+    $.ajax({
+            type: "POST",
+            url: "traitements/getTopPlayers.php",
+            dataType: "JSON",
+            success: function (data) {
+                body.html(' ');
+                addLigne(data,body);
+            }
+    });
+
+    //affiche
+function addLigne(data,body){
+    $.each(data, (indice,users)=>{
+        body.append(`
+            <tr class="text-center">
+                <td id="_id_${users.id}">${users.nom}</td>
+                <td id="_id_${users.id}">${users.prenom}</td>
+                <td id="_id_${users.id}">${users.score}</td>
+                <td class="text-center">
+                    <a href="#" id="_id_${users.id}" class= "edit"></a>
+                    <a href="#" id="_id_${users.id}" class= "delete"></a>
+                </td>
+            </tr>
+            `);
+        });
+    }
+});
+
+
+
 

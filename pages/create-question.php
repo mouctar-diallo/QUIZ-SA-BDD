@@ -1,5 +1,5 @@
 <?php 
-@include('traitements/traitement.php');
+@include('traitements/traitementQuestion.php');
 ?>
 <h2 class="text-center">CREATE A QUIZZ</h2>
 <div class="col-md-8 col-md-offset-2">
@@ -8,7 +8,7 @@
         <div class="form-group">
             <label for="question" class="control-label">Questions</label>
             <textarea class="form-control" name="question" id="question" rows="3"><?php if(isset($question)) echo $question;?></textarea>
-            <span id="textearea"><?= $ErrorQuestion ?></span>
+            <span id="textearea"></span>
             <label for="nombrePoints" class="control-label">Nombre points</label>
             <input type="number" name="nombrePoints" id="error-nbpoints" class="form-control" value="<?= $nbpoints ?>">
             <span id="nbpoints"></span>
@@ -25,11 +25,9 @@
             <div class="dynamique" id="dynamique">
             
             </div>
-
             <input type="submit" name="enregistrer" id="enregistrer" value="Enregistrer" class="btn-save-question btn-primary">
         </div>
     </form>
 </div>
-<!--script question -->
-<script src="<?=WEBROOT?>/public/script/questions.js"></script>
+
 

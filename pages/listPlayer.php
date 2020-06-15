@@ -31,64 +31,9 @@
 </div>
 </div>
 <script>
-    //recuperer la ligne du tr cliqué
-     $('.users').click(function(){
-         tr = $(this);
-    });
-    //get firstname
-    $(document).on('blur','.firstname',function(){
-        id_player = $(this).data('id');
-        firstname = $(this).text();
-        editPlayers(id_player,firstname,'nom')
-    });
- 
-    //get lastname
-    $(document).on('blur','.lastname',function(){
-        id_player = $(this).data('id');
-       lastname = $(this).text();
-       editPlayers(id_player,lastname,'prenom')
-    });
-
-    function editPlayers(id_player,newValue,champ_a_modifier){
-        $.ajax({
-            url: 'traitements/editPlayer.php',
-            type: 'POST',
-            data:{
-                id: id_player,
-                value:newValue,
-                cible: champ_a_modifier,
-            },
-            success: function(response){
-                alert(response)
-            }
-        })
-    }
-   
-    //delete
-    $(document).on('click','.remove',function(){
-       if(confirm("voulez vraiment supprimé le joueur ?")){
-            id_player = $(this).find('a').attr('id');
-            $.ajax({
-                url: 'traitements/removePlayer.php',
-                type: 'POST',
-                data:{
-                    id : id_player,
-                },
-                success: function(response){
-                    if (response=="supprimer") {
-                        alert('le joueur a eté supprimer avec succès');
-                        //supprimons la ligne correspondante
-                        tr.hide( 2000, function() {
-                            $( this ).remove();
-                        });
-                    }else{
-                        alert("le joueur n'a pas eté supprimer");
-                    }
-                }
-            })
-       }
-       return false;
-    });
+    //function edit and delete players
+    crudPlayers();
+    
     getPlayers();
 	$(document).ready( function () {
 		$('#example').DataTable();

@@ -139,14 +139,28 @@ function dynamique(){
 	}
 }
 } 
-
+//fonction qui gere la validation des inputs generés
+validGenerateInputsFields = ()=>{
+	var inputs = $('input');
+    for (input of inputs) {
+        if (input.hasAttribute('error')) {
+            var span = input.getAttribute('error');
+            if (!input.value) {
+                document.getElementById(span).innerText="ce champ est obligatoire";
+                e.preventDefault();
+			}else{
+				document.getElementById(span).innerText=" ";
+			}
+		}
+	}
+}
 //gestion des questions
  $('#enregistrer').click(function(event){
-
+	 event.preventDefault();
 	var textearea = $('#question').val();
 	var nbPoints = $('#error-nbpoints').val();
 	var type = $('#type').val();
-	//si user commence a saisir
+	//si user commence a saisir on efface le message d'erreur
 	$('#question').keyup(function() {
 		$('#textearea').html(' ');
 	});
@@ -170,10 +184,58 @@ function dynamique(){
 		$('#vide').html('choisissez un type de reponse');
 		return false;
 	}
-
+	//rassurons de ne pas envoyé de valeur champs vides 
+	validGenerateInputsFields();
 	//send to server and process response
-   
+	form = $('#form')
+	var datas = form.serializeArray();
+	
+	$.ajax({
+		url: 'traitements/traitementQuestion.php',
+		type: 'POST',
+		data: datas,
+		
+		success: function(response){
+			if (response) {
+				alert('la question est enregistré avec succès');
+				form.trigger("reset");
+			}
+		}
+	});
  })
+
+ $(document).on('click','.ligne',function(){
+	row = $(this);
+ })
+ //******************** REMOVE QUESTIONS  */
+ $(document).on('click','.delete',function(){
+	if (confirm('voulez-vous supprimez la question ?')) {
+		var id_question = $(this).attr('id');
+		$.ajax({
+			url : 'traitements/removeQuestion.php',
+			type : 'POST',
+			data :{
+				id_question,
+			},
+			success : function(response){
+				if (response=="supprimer") {
+					alert('suppression réussi');
+					row.hide('fast', function(){
+						$( this ).remove();
+					})
+				}
+			}
+		})
+	}
+	return false;
+ })
+  //******************** UPDATE QUESTIONS  */
+ $(document).on('click','.update',function(){
+	var id = $(this).attr('id');
+	alert(id)
+ })
+
+ 
 //*************************************************************************************************
 function deleteChamp(l){
 	var supprimer = document.getElementById('line'+l);
@@ -194,3 +256,4 @@ $('#add').click(function(event){
 	event.preventDefault();
     dynamique();
 })
+

@@ -7,7 +7,9 @@ body{
 	font-family: 'Open sans',sans-serif;
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
+
 .header{
 	background: rgba(11, 138, 210, 0.9);
 	width: 100%;
@@ -40,6 +42,16 @@ body{
 	height: 35px;
 	border-radius: 6px;
 }
+.btn-ok{
+	color: brown;
+	margin-top: 3%;
+	float: right;
+	background-color: aqua;
+}
+#scrollZone{
+    max-height: 400px;
+	overflow: scroll;
+}
 .btn-delete{
 	width: 20px;
 	height: 25px;
@@ -57,11 +69,7 @@ body{
 }
 
 .header-text{
-	font-size: 35px;
-	margin-top: -6%;
-	color: #FFFFFF;
-	font-weight: normal;
-	text-align: center;
+	color: #FFFFFF;	
 }
 
 .formulaire{
@@ -137,7 +145,7 @@ body{
 .btn-deconnexion{
 	float: right;
 	margin-right: 2%;
-	margin-top: -3.5%;
+	margin-top: -11%;
 	font-weight: normal;
 	font-size: 36px;
 	background-color: #3EF4E9;
@@ -298,4 +306,55 @@ span{
 	width: 100%;
 	height: 100%;
 	border-radius: 100%;
+}
+
+.header-player{
+	width: 100%;
+	background-color: #0C151D;
+	height: 110px;
+}
+.btn-logout{
+	float: right;
+	margin-right: 5%;
+	margin-top: -2.5%;
+	font-weight: normal;
+	font-size: 12px;
+	width: 10%;
+	height: 30%;
+	background-color: #3EF4E9;
+	border: #3EF4E9 1px solid;
+	color: #FFFFFF;
+}
+.btn-quit{
+	float: right;
+	margin-right: 1%;
+	margin-top: -2.5%;
+	font-weight: normal;
+	font-size: 15px;
+	width: 10%;
+	height: 30%;
+	background-color: #FF5492;
+	border: #FF5492 1px solid;
+	color: #FFFFFF;
+}
+.player-page{
+	background-color: #FFFFF0;
+}
+.phot-player{
+	background-color: #FFFFF0;
+	height:55%;
+	margin-left: 40%;
+	margin-right: 25%;
+	width: 25%;
+	border-radius: 100%;
+}
+.phot-player img{
+	height: 100%;
+	width: 100%;
+	border-radius: 100%;
+}
+.info-player{
+	background-color: #0CF4E6;
+	width: 100%;
+	
 }

@@ -26,5 +26,6 @@ if (isset($_GET['statut']) && $_GET['statut']=='deconnecter')
 		require_once('./pages/template.php');
 	}
 ?>
-<!--script-->
+
 <script src="<?=WEBROOT?>/public/script/validation.js"></script>
+<script src="<?=WEBROOT?>/public/script/questions.js"></script>
