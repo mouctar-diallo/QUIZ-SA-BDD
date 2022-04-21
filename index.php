@@ -2,11 +2,11 @@
  define("WEBROOT","http://localhost/QUIZ-SA-BDD");
 include('data/connectBdd.php');
 
-if (isset($_GET['statut']) && $_GET['statut']=='deconnecter') 
-{
-	deconnexion();
-	header('location:index.php');
-}
+	if (isset($_GET['statut']) && $_GET['statut']=='deconnecter') 
+	{
+		deconnexion();
+		header('location:index.php');
+	}
 	if(isset($_GET['page'])) 
 	{
 		$page= $_GET['page'];
